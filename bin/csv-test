@@ -6,4 +6,4 @@ var fs = require('fs'),
     config = fs.readFileSync(path.resolve(process.cwd(), args[0]), 'utf8'),
     validators = args[2] && require(path.resolve(process.cwd(), args[2]));
 
-    require('..')(config, args[1], validators);
+require('..')(config, args[1], validators);
