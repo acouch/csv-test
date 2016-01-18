@@ -2,8 +2,17 @@
 
 var fs = require('fs'),
     path = require('path'),
-    args = process.argv.slice(2),
-    config = fs.readFileSync(path.resolve(process.cwd(), args[0]), 'utf8'),
+    args = process.argv.slice(2);
+
+    // If a wildcard is not enclosed in a parantheses it will pass wildcard
+    // results instead of the wildcard.
+    if (/\.csv$/i.test(args[2])) {
+      console.log("Invalid syntax. If you are passing on a wildcard make sure it is enclosed in parantheses.");
+      process.exit(1);
+    }
+
+var config = fs.readFileSync(path.resolve(process.cwd(), args[0]), 'utf8'),
     validators = args[2] && require(path.resolve(process.cwd(), args[2]));
+
 
 require('..')(config, args[1], validators);
