@@ -100,12 +100,12 @@ module.exports = function(yml, arg, validators) {
       }
     }
 
-    function addValidators(validators) {
-      _.each(validators, function(func, key) {
-        validator.extend(key, func);
-      });
-    }
+  }
 
+  function addValidators(validators) {
+    _.each(validators, function(func, key) {
+      validator.extend(key, func);
+    });
   }
 
 };
