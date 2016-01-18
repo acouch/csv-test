@@ -11,7 +11,7 @@ tape('execute CLI script', function(t) {
 });
 
 tape('execute glob-based script', function(t) {
-  var command = 'bin/csv-test test/fixtures/test.yml 'test/fixtures/*.csv';
+  var command = 'bin/csv-test test/fixtures/test.yml "test/fixtures/*.csv"';
   exec(command, function(error, stdout, stderr) {
     if (error) console.error(error);
     t.plan(1);
