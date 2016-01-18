@@ -21,6 +21,7 @@
     "csv-parse": "^1.0.0",
     "js-yaml": "^3.3.1",
     "lodash": "^3.10.1",
+    "glob": "^6.0.4",
     "stream-transform": "^0.1.0",
     "validator": "^4.0.5"
   },
